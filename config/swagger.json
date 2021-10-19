@@ -1,4 +1,3 @@
-
 {
     "openapi": "3.0.0",
   "title": "API DOCUMENTATION",
@@ -20,18 +19,24 @@
   "schemes":["http"],
   "consumes":["application/json"],
   "produces":["application/json"],
+  "headers": {
+    "Content-Type": "application/json"
+  },
   "paths":{
     "/state/stateAdd":{
       "post":{
       "tags":["stateAdd"],
       "description":"desc of api",
+      
       "parameters":[{
-         "name":"stateAdd",
+         "name":"stateName",
          "description":"state to add",
          "in":"body",
-         "required":true,
+         
+               "required":true,
          "schema":{
-           "$ref":"#definations/State"
+             "type": "object",
+           "$ref":"#/definitions/State"
          }
       }],
       "produces":["application/json"],
@@ -39,21 +44,23 @@
         "200":{
           "description":"new state is created",
           "schema":{
-           "$ref":"#definations/State"
+           "$ref":"#/definitions/State"
          }
         }
       }
 
     }}
   },
-  "definations":{ 
+  "definitions":{
+
     "State":{
       "required": ["stateName,isVisible"],
     "properties":{
-      "id":{
+      "_id":{
         "type":"string",
         "uniqueItems":true
-      },"stateName":{
+      },
+      "stateName":{
         "type":"string",
         "uniqueItems":true
       },"isVisible":{

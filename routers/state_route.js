@@ -9,16 +9,30 @@ const {
 
 /**
  * @swagger
- *
  * /state/stateAdd:
- * get:
- *  description: hkjdhfjkah
- *  responses:
- *  '200':
- *      description:a sucess insert
- *
- *
- *
+ *    post:
+ *        summary: testing api
+ *        descriptin: test description
+ *        requestBody:
+ *            content:
+ *               application/json:
+ *                   schema:
+ *                      type: object
+ *                      properties:
+ *                          stateName:
+ *                               type: string
+ *                          isVisible:
+ *                               type: boolean
+ *        responses:
+ *            200:
+ *                 description: this is description
+ *                 content:
+ *                     application/json:
+ *                         schema:
+ *                             type: object
+ *                             properties:
+ *                                stateName:
+ *                                         type: string
  */
 stateRouter.route("/stateAdd").post(stateAdd);
 stateRouter.route("/stateDelete").delete(stateDelete);
