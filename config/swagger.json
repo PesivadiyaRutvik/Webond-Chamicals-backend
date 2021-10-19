@@ -1,0 +1,67 @@
+
+{
+    "openapi": "3.0.0",
+  "title": "API DOCUMENTATION",
+  "description": "This is a sample server for a pet store.",
+  
+  "license": {
+    "name": "TESTING ",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+  },
+  "version": "1.0.0",
+  "host":"localhost:3000",
+  "basePath":"/api",
+  "tags":[
+    {
+      "name":"stateAdd",
+      "description":"API for adding state"
+    }
+  ],
+  "schemes":["http"],
+  "consumes":["application/json"],
+  "produces":["application/json"],
+  "paths":{
+    "/state/stateAdd":{
+      "post":{
+      "tags":["stateAdd"],
+      "description":"desc of api",
+      "parameters":[{
+         "name":"stateAdd",
+         "description":"state to add",
+         "in":"body",
+         "required":true,
+         "schema":{
+           "$ref":"#definations/State"
+         }
+      }],
+      "produces":["application/json"],
+      "responses":{
+        "200":{
+          "description":"new state is created",
+          "schema":{
+           "$ref":"#definations/State"
+         }
+        }
+      }
+
+    }}
+  },
+  "definations":{ 
+    "State":{
+      "required": ["stateName,isVisible"],
+    "properties":{
+      "id":{
+        "type":"string",
+        "uniqueItems":true
+      },"stateName":{
+        "type":"string",
+        "uniqueItems":true
+      },"isVisible":{
+        "type":"boolean"
+     
+      }
+    }
+    }
+  }
+  
+}
