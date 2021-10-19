@@ -105,3 +105,6 @@ dist
 
 #node_modules
 /node_modules
+
+#Ignore lock file
+package-lock.json
