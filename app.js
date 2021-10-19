@@ -12,13 +12,11 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use('/user',userRouter);
+app.use('/user', userRouter);
 
 app.use(errorHandler);
 
-app.listen(PORT,()=>{
+// Todo: need to handle the error
+app.listen(PORT, () => {
     console.log(`Server running ona port:- ${PORT}`);
 });
-
-
-
