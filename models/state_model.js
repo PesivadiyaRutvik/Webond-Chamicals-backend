@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const mongodb = require("mongodb");
-const Schema = mongoose.Schema;
+
 const stateSchema = mongoose.Schema({
   stateName: {
     type: String,

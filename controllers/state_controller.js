@@ -1,6 +1,6 @@
 const stateModel = require("../models/state_model");
 
-exports.stateAdd = async (req, res, next) => {
+exports.addState = async (req, res, next) => {
   try {
     console.log(req.body);
     console.log(req.parms);
@@ -18,7 +18,7 @@ exports.stateAdd = async (req, res, next) => {
   }
 };
 
-exports.stateDelete = async (req, res, next) => {
+exports.deleteState = async (req, res, next) => {
   try {
     console.log(req.body);
     const id = req.query.stateID;
@@ -41,7 +41,7 @@ exports.stateDelete = async (req, res, next) => {
   }
 };
 
-exports.stateFetch = async (req, res, next) => {
+exports.getAllState = async (req, res, next) => {
   try {
     const match = {};
 
